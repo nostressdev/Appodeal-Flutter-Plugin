@@ -37,7 +37,6 @@ public class SwiftAppodealFlutterPlugin: NSObject, FlutterPlugin {
         switch call.method {
         case "updateConsent": updateConsent(call, result)
         case "initialize": initialize(call, result)
-        case "isInitialized": isInitialized(call, result)
         case "setAutoCache": setAutoCache(call, result)
         case "isAutoCacheEnabled": isAutoCacheEnabled(call, result)
         case "cache": cache(call, result)
@@ -108,12 +107,6 @@ public class SwiftAppodealFlutterPlugin: NSObject, FlutterPlugin {
             Appodeal.initialize(withApiKey: appKey, types: adTypes)
         }
         result(nil)
-    }
-    
-    private func isInitialized(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
-        let args = call.arguments as! [String: Any]
-        let adType = getAdType(adId: args["adType"] as! Int)
-        result(Appodeal.isInitalized(for: adType))
     }
     
     private func setAutoCache(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
