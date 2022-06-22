@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.dependency 'Flutter'
   s.dependency "Appodeal", "3.0.0"
-  s.dependency "StackConsentManager", "~> 1.1.2"
+  s.dependency "StackConsentManager", "~> 1.2.0"
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
