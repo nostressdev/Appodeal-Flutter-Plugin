@@ -82,14 +82,6 @@ class Appodeal {
     return _channel.invokeMethod('updateConsent', {'boolConsent': boolConsent});
   }
 
-  /// Check if [adType] is initialized
-  ///
-  /// Returns `true` if ad type is initialized, otherwise `false`.
-  static Future<bool> isInitialized(int adType) async {
-    return await _channel.invokeMethod('isInitialized', {'adType': adType}) ??
-        false;
-  }
-
   /// Set [autoCache] new ads when current ads was shown for [adType].
   static Future<void> setAutoCache(int adType, bool autoCache) async {
     return await _channel.invokeMethod(
